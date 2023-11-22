@@ -1,0 +1,21 @@
+/* Techsume CSS */
+
+/* Imports */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Global */
+body, html {
+  outline: none;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(24, 24, 27);
+}
+
+a {
+  text-decoration: none;
+}

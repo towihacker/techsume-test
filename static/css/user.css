@@ -1,0 +1,41 @@
+.user-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background: rgb(24,24,27);
+    width: 100vw;
+    height: 100vh;
+}
+
+.user-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.user-container h1 {
+    color: rgb(256,256,256);
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row h1, .row h2, .row p {
+    color: rgb(256,256,256)
+}
+
+.row .status {
+    background: rgb(200,200,200);
+    width: 300px;
+    height: 200px;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}

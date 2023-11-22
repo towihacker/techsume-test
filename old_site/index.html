@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - IT Resume Uploader</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <!-- Add Bootstrap CSS with a dark theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #333; /* Dark Gray Background */
+            color: #fff; /* Text Color */
+        }
+
+        /* Customize the Bootstrap theme for dark elements */
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        .navbar-dark .navbar-toggler {
+            color: #fff;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: #fff;
+        }
+
+        .navbar-dark .navbar-toggler-icon {
+            background-color: #fff;
+        }
+
+        .card {
+            background-color: #444; /* Dark Gray Card Background */
+        }
+
+        .card-title {
+            color: #fff; /* Card Title Color */
+        }
+
+        .form-control {
+            background-color: #555; /* Form Control Background */
+            color: #fff; /* Form Control Text Color */
+        }
+
+        .btn-primary, .btn-success {
+            background-color: #007bff; /* Button Background */
+            border-color: #007bff; /* Button Border Color */
+        }
+
+        .btn-primary:hover, .btn-success:hover {
+            background-color: #0056b3; /* Hovered Button Background */
+            border-color: #0056b3; /* Hovered Button Border Color */
+        }
+
+        .resume-logo, .blue-logo {
+            background-color: #444; /* Logo Background */
+            border: 2px solid #007bff; /* Logo Border */
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .top-content {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .title h1 {
+            color: #007bff; /* Title Color */
+        }
+
+        .title p {
+            color: #fff; /* Subtitle Color */
+        }
+
+        .container {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .middle-logos {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .resume-logo {
+            order: 1;
+        }
+
+        .blue-logo {
+            order: 2;
+        }
+
+        .bot-content {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .getStarted h2 {
+            color: #fff; /* Get Started Title Color */
+        }
+
+        .getStarted-boxes {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .boxes {
+            background-color: #444; /* Box Background */
+            color: #fff; /* Box Text Color */
+            padding: 20px;
+            border: 2px solid #007bff; /* Box Border */
+            border-radius: 10px;
+            width: 30%;
+        }
+
+        .boxes span {
+            font-size: 3rem;
+        }
+
+        .boxes h3 {
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #444;
+            padding: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/index.html"><img src="/static/images/logo.png" class="logo" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link">REGISTER</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">LOGIN</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            MENU
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/src/about-us.html"><span class="material-icons">group</span> ABOUT US</a>
+                            <a class="dropdown-item" href="/src/contact-us.html"><span class="material-icons">contacts</span> CONTACT US</a>
+                            <a class="dropdown-item" href="/src/faq.html"><span class="material-icons">quiz</span> FAQ</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="content">
+        <!-- Top Content -->
+        <div class="top-content text-center">
+            <!-- Title -->
+            <div class="title">
+                <h1>TECH<span>SUME</span></h1>
+                <p>Let us analyze your resume and find matches</p>
+            </div>
+        </div>
+        <!-- End of Top Content -->
+
+        <!-- Login Section -->
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary text-center">Login</h3>
+                            <form action="/login" method="POST" autocomplete="off">
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                                    {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+                                <div class="form-group">
+                                    <label for="name">Username</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn btn-success btn-block">
+                                    <a href="/src/register.html" class="btn btn-primary btn-block">Register</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Login Section -->
+
+        <!-- Middle Logos -->
+        <div class="middle-logos text-center">
+            <img src="/static/images/resumeblue.png" alt="Resume Logo" class="resume-logo">
+            <img src="/static/images/logo(blue).png" alt="Blue Logo" class="blue-logo">
+        </div>
+        <!-- End of Middle Logos -->
+
+        <!-- Bottom Content -->
+        <div class="bot-content text-center">
+            <!-- Get Started -->
+            <div class="getStarted">
+                <h2>3 Easy Steps. Get Started Now.</h2>
+                <div class="getStarted-boxes">
+                    <div class="boxes box1">
+                        <span class="material-icons">person</span>
+                        <h3>Login or Sign Up to the Techsume Platform</h3>
+                    </div>
+                    <div class="boxes box2">
+                        <span class="material-icons">description</span>
+                        <h3>Fill Out Our Premade Resume Form</h3>
+                    </div>
+                    <div class="boxes box3">
+                        <span class="material-icons">handshake</span>
+                        <h3>Scan to improve your resume instantly!</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Bottom Content -->
+    </div>
+
+    <footer class="text-center">
+        <p>&copy; 2023 Techsume Resume Uploader</p>
+    </footer>
+</body>
+</html>

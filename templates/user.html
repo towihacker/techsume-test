@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - 'username'</title>
+</head>
+
+<body>
+    <div class="user-page">
+        <div class="user-container">
+            <h1 class="mt-5">My Profile</h1>
+            <div class="row">
+                <p>Logged in as: <strong>{{ session.name }}</strong></p>
+                <a class="btn btn-danger" href="/logout.html">Logout</a>
+            </div>
+            <div class="row">
+                <div class="status">
+                    <p>No forms found</p>
+                    <a href="">Submit a form</a>
+                </div>
+            </div>
+            <div class="row">
+                <h2>Welcome to the user profile page...</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

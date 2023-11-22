@@ -1,0 +1,209 @@
+/* Login Page */
+body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(24, 24, 27);
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    background: url('/static/images/background.jpg');
+    border-radius: 20px;
+}
+
+.left-container {
+    position: absolute;
+    background: rgb(256,256,256);
+    width: 50%;
+    height: 100%;
+    border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.left-container.active {
+    transform: translateX(100%);
+}
+
+.login-block {
+    opacity: 100%;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    transition: all 0.1s;
+    position: absolute;
+}
+
+.login-block.active {
+    display: none;
+    opacity: 0%;
+}
+
+.login-block input, .login-block input {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(220,220,220);
+}
+
+.login-block .enter {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.login-block .submit {
+    padding: 10px 75px;
+    border: none;
+    color: rgb(0,0,0);
+    background-color: rgb(100,100,256);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.login-block .submit:hover {
+    transition: all 0.3s;
+    background: rgb(200,200,256);
+    color: rgb(0,0,0);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.login-block .alert {
+    text-align: center;
+}
+
+.register-block {
+    opacity: 0%;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    pointer-events: none;
+    transition: all 0.1s;
+}
+
+.register-block.active {
+    display: flex;
+    pointer-events: all;
+    opacity: 100%;
+}
+
+.register-block input, .register-block input {
+    font-size: 1.2rem;
+    padding: 5px;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(220,220,220);
+}
+
+.register-block .enter {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 200px;
+}
+
+.register-block .submit {
+    padding: 10px 75px;
+    border: none;
+    color: rgb(0,0,0);
+    background-color: rgb(100,100,256);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.register-block .submit:hover {
+    transition: all 0.3s;
+    background: rgb(200,200,256);
+    color: rgb(0,0,0);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.register-block .alert {
+    text-align: center;
+}
+
+.right-container {
+    position: absolute;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    height: 100%;
+    transition: all 0.3s;
+}
+
+.right-container.active {
+    transform: translateX(-100%);
+}
+
+.right-container .title {
+    color: rgb(256,256,256);
+}
+
+.register-button {
+    color: rgb(256,256,256);
+    padding: 10px 50px;
+    background-color: rgb(150,150,256);
+    border-radius: 10px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.register-button.active {
+    display: none;
+    opacity: 0%;
+}
+
+.register-button:hover {
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: rgb(200,200,256);
+}
+
+.login-button {
+    display: none;
+    opacity: 0%;
+    color: rgb(256,256,256);
+    padding: 10px 50px;
+    background-color: rgb(150,150,256);
+    border-radius: 10px;
+    transition: all 0.3s;
+    border: none;
+}
+
+.login-button.active {
+    display: block;
+    opacity: 100%;
+}
+
+.login-button:hover {
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: rgb(200,200,256);
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Techsume | Login</title>
+</head>
+<body>
+  <!--
+    <div class="container">
+        <h2>User Login</h2>
+        <form action="/static/login" method="post">
+            {% if message is defined and message %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+            <p class="mt-3">Don't have an account? <a href="/static/register.html">Register here</a></p>
+        </form>
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="card-title text-primary text-center">Login</h3>
+                            <form action="/login" method="POST" autocomplete="off">
+                                {% with messages = get_flashed_messages(with_categories=true) %}
+                                {% if messages %}
+                                    {% for category, message in messages %}
+                                        <div class="alert alert-{{ category }}">{{ message }}</div>
+                                    {% endfor %}
+                                {% endif %}
+                                {% endwith %}
+                                <div class="form-group">
+                                    <label for="name">Username</label>
+                                    <input type="text" id="name" name="name" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" value="Login" class="btn btn-success btn-block">
+                                    <a href="/src/register.html" class="btn btn-primary btn-block">Register</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
+
+  <!-- New login -->
+  <div class="main-container" id="main-container">
+    <div class="left-container" id="left-container">
+      <div class="login-block" id="login-block">
+        <h1 class="title">Login Page</h1>
+
+        <form class="enter" method="POST" action="{{ url_for('login', formid=1) }}">
+          <input type="name" name="name" placeholder="Username" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <input type="submit" name="submit" class="submit">
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </form>
+
+      </div>
+      <div class="register-block" id="register-block">
+        <h1 class="title">Register Page</h1>
+
+        <form class="enter" method="POST" action="{{ url_for('login', formid=2) }}">
+          <input type="name" name="name" placeholder="Full Name" required />
+          <input type="name" name="username" placeholder="Username" required />
+          <input type="password" name="password" placeholder="Password" required />
+          <input type="submit" name="submit" class="submit" />
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+          {% endwith %}
+        </form>
+      </div>
+    </div>
+
+    <div class="right-container" id="right-container">
+      <h1 class="title">Techsume</h1>
+      <img src="{{url_for('static',filename='images/logo.png')}}" alt="" class="logo"/>
+      <button class="register-button" id="register-button">Register Here</button>
+      <button class="login-button" id="login-button">Login Here</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+</body>
+</html>

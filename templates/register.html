@@ -1,0 +1,109 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Matching Registration</title>
+    <!-- Include Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background: url('/static/images/Signupbackground.jpg') no-repeat center center fixed;
+            background-size: cover;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+            padding: 20px;
+            max-width: 400px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .input-group input {
+            border-radius: 8px;
+        }
+
+        .input-group-text {
+            cursor: pointer;
+        }
+
+        .error-message {
+            color: #ff0000;
+            font-size: 16px;
+        }
+
+        .btn {
+            background: #45aaf2;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #0077b6;
+        }
+
+        .page-title {
+            color: #fff;
+            font-weight: bold;
+            font-size: 38px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" style="margin-top: 100px">
+        <div class="col-md-offset-3 col-md-5">
+            <div class="shadow">
+                <form method="POST" action="/register">
+                    <h2 class="page-header text-primary text-center">SIGN UP</h2>
+                    <div class="form-group">
+                        <label for="name">Username</label>
+                        <input type="text" class="form-control" name="name" id="name" required>
+                    </div>
+                 
+                    <div class="form-group">
+                        <label for="contact">Email</label>
+                        <input type="text" class="form-control" name="contact" id="contact" required>
+                    </div>
+           
+                    
+                    <div class="form-group">
+                        <label for="mail">password</label>
+                        <input type="text" class="form-control" name="mail" id="mail" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-success btn-block" value="Register">
+                        <a href="/" class="btn btn-primary btn-block">Back to Home</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+        $("form").attr("autocomplete", "off");
+    });
+</script>
+
+</html>

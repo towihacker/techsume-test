@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume - IT Resume Uploader</title>
+    <link rel="stylesheet" href="../styles/upload.css">
+</head>
+<body>
+    <header>
+        <h1>IT Resume Uploader</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="upload.html">Upload Resume</a></li>
+                <li><a href="scan.html">Scan & Improve</a></li>
+                <li><a href="results.html">Results</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Upload Your IT Resume</h2>
+            <form action="upload_process.php" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="resume">Select your resume file:</label>
+                    <input type="file" id="resume" name="resume" accept=".pdf, .doc, .docx">
+                </div>
+                <div class="form-group">
+                    <button type="submit">Upload Resume</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 IT Resume Uploader</p>
+    </footer>
+</body>
+</html>
